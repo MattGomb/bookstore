@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-function Book(props) {
+function Book(title, author) {
   return (
     <div className="book">
       <div className="book-info">
-        <h1>{props.title}</h1>
-        <p>{props.author}</p>
+        <h1>{title}</h1>
+        <p>{author}</p>
         <p>genre</p>
         <h3>title-placeholder</h3>
         <p>author-placeholder</p>

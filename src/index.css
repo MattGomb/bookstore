@@ -49,11 +49,13 @@ body {
   padding: 1rem;
 }
 
-.nav-title a:hover, .nav-item a:hover {
+.nav-title a:hover,
+.nav-item a:hover {
   font-weight: bold;
 }
 
-.nav-title a:active, .nav-item a:active {
+.nav-title a:active,
+.nav-item a:active {
   background-color: rgb(200, 200, 200, 0.1);
   border-radius: 1rem;
 }
@@ -102,7 +104,12 @@ body {
 }
 
 .form-title {
-  color: #888888;
+  color: #888;
+}
+
+input {
+  border: 1px solid #e8e8e8;
+  padding: 1rem;
 }
 
 input:nth-child(1) {
@@ -113,17 +120,12 @@ input:nth-child(2) {
   width: 30%;
 }
 
-input {
-  border: 1px solid #e8e8e8;
-  padding: 1rem;
-}
-
 .book {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  background-color: #ffffff;
+  background-color: #fff;
   margin-bottom: 1rem;
   border-radius: 4px;
   border: solid 1px #e8e8e8;
@@ -134,7 +136,8 @@ input {
   padding: 1rem;
 }
 
-.book-progress, .book-current {
+.book-progress,
+.book-current {
   width: 30%;
   padding: 1rem;
 }
@@ -173,7 +176,8 @@ button:hover {
   font-weight: bold;
 }
 
-.add-button:hover, .progress-button:hover {
+.add-button:hover,
+.progress-button:hover {
   background-color: #0069d9;
   transform: translateY(-1px);
 }

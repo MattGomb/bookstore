@@ -1,5 +1,5 @@
-import React from "react";
-import Book from "./Book";
+import React from 'react';
+import Book from './Book';
 
 function List() {
   return (
@@ -9,7 +9,7 @@ function List() {
         <Book />
         <Book />
       </div>
-      <span className="divider"></span>
+      <span className="divider" />
     </section>
   );
 }
