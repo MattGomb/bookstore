@@ -63,12 +63,15 @@ body {
 
 .home-container {
   background: linear-gradient(138deg, rgba(146, 21, 21, 0.5), rgba(50, 181, 221, 0.5));
+  display: grid;
+  place-items: center;
+  height: calc(100vh - 5.25rem);
+}
+
+.home-content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  justify-content: center;
-  height: calc(100vh - 5.5rem);
-  align-items: center;
 }
 
 .home-title {
