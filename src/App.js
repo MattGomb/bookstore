@@ -6,16 +6,16 @@ import Categories from "./pages/Categories";
 
 function App() {
   return (
-    <main>
-      <Router>
-        <Navbar />
+    <Router>
+      <Navbar />
+      <main>
         <Routes>
           <Route path="/" element={<App />} />
           <Route path="/Books" element={<Books />} />
           <Route path="/Categories" element={<Categories />} />
         </Routes>
-      </Router>
-    </main>
+      </main>
+    </Router>
   );
 }
 
