@@ -1,8 +1,8 @@
 import React from "react";
-import { BrowserRouter as Router,Routes, Route } from "react-router-dom";ű
+import { BrowserRouter as Router,Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
-import Books from "./components/Books";
-import Categories from "./components/Categories";
+import Books from "./pages/Books";
+import Categories from "./pages/Categories";
 
 function App() {
   return (
