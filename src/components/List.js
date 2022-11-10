@@ -3,7 +3,14 @@ import Book from "./Book";
 
 function List() {
   return (
-    <Book />
+    <section className="list-container">
+      <div className="list">
+        <Book />
+        <Book />
+        <Book />
+      </div>
+      <span className="divider"></span>
+    </section>
   );
 }
 
