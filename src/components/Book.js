@@ -1,11 +1,12 @@
 import React from 'react';
 
-function Book(title, author) {
+const Book = (props) => {
+  const propsHolder = props;
   return (
     <div className="book">
       <div className="book-info">
-        <h1>{title}</h1>
-        <p>{author}</p>
+        <h1>{propsHolder.title}</h1>
+        <p>{propsHolder.author}</p>
         <p>genre</p>
         <h3>title-placeholder</h3>
         <p>author-placeholder</p>
@@ -25,6 +26,6 @@ function Book(title, author) {
       </div>
     </div>
   );
-}
+};
 
 export default Book;
