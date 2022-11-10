@@ -1,9 +1,12 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Name
+# Bookstore
 
-> Description the project.
+> The Bookstore is a website similar to the "Awesome Books" website built in the previous module. By building this application, we learn how to use React and Redux. I will create an MVP version of the Bookstore that allows the user to:
 
+- Display a list of books.
+- Add a book.
+- Remove a selected book.
 
 ## Built With
 
