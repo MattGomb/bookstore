@@ -14,7 +14,9 @@
 - webpack, babel, & jest
 - GitHub, Gitflow, VSCode, Netlify
 
-## Live Demo not available yet
+## Live Demo 
+
+[Click Me!](bookstore-mattgomb.netlify.app)
 
 
 ## Getting Started with Create React App
