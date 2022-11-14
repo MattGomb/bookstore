@@ -6,7 +6,7 @@ const CHECK_STATUS = 'bookstore/src/redux/categories/categories/CHECK';
 
 export default function categoriesReducer(state = [], action) {
   switch (action.type) {
-    case CHECK:
+    case CHECK_STATUS:
       return 'Under construction';
     default:
       return state;
