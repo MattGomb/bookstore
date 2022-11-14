@@ -2,8 +2,8 @@ import Book from '../../components/Book';
 
 // actions
 
-const ADD = 'ADD';
-const REMOVE = 'REMOVE';
+const ADD = 'bookstore/src/redux/books/books/ADD';
+const REMOVE = 'bookstore/src/redux/books/books/REMOVE';
 
 // reducer
 

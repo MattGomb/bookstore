@@ -1,6 +1,6 @@
 // actions
 
-const CHECK = 'CHECK';
+const CHECK_STATUS = 'bookstore/src/redux/categories/categories/CHECK';
 
 // reducer
 
@@ -16,5 +16,5 @@ export default function categoriesReducer(state = [], action) {
 // action creator for check category
 
 export const checkStatus = () => ({
-  type: CHECK,
+  type: CHECK_STATUS,
 });
