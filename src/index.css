@@ -39,9 +39,15 @@ body {
 }
 
 .nav-title a {
-  text-decoration: none;
-  color: #0290ff;
+  text-decoration:none;
   padding: 1rem;
+  color: transparent;
+}
+
+.nav-title span {
+  background: linear-gradient(138deg, rgba(50, 181, 221, 0.5), rgba(146, 21, 21, 0.5));
+  background-clip: text;
+  -webkit-background-clip: text;
 }
 
 .nav-item a {
