@@ -224,7 +224,8 @@ button:hover {
   transform: translateY(-1px);
 }
 
-.add-button:active, .progress-button:active {
+.add-button:active,
+.progress-button:active {
   background-color: #0062cc;
   transform: translateY(1px);
 }
