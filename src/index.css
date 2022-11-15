@@ -95,7 +95,10 @@ body {
 
 .categories-container {
   display: flex;
+  gap: 5rem;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 1rem 4rem;
 }
 
