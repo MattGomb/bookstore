@@ -23,8 +23,8 @@ const Form = () => {
     dispatch(addBook({
       id, title, author, progress, currentChapter,
     }));
-    setTitle('');
-    setAuthor('');
+    document.getElementById('title-input').value = '';
+    document.getElementById('author-input').value = '';
   };
 
   return (
@@ -33,8 +33,8 @@ const Form = () => {
         ADD NEW BOOK
       </h2>
       <form className="form">
-        <input type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
-        <input type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
+        <input id="title-input" type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
+        <input id="author-input" type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
         <button type="button" className="add-button" onClick={onClickAddBook}>ADD BOOK</button>
       </form>
     </section>
