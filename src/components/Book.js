@@ -17,11 +17,15 @@ const Book = ({
       </div>
     </div>
     <div className="book-progress">
-      <h3>{progress}</h3>
+      <h3>
+        {progress}
+        %
+      </h3>
     </div>
     <div className="book-current">
       <h3>CURRENT CHAPTER</h3>
       <p>
+        Chapter
         {currentChapter}
       </p>
       <button type="button" className="progress-button">UPDATE PROGRESS</button>
@@ -34,7 +38,7 @@ Book.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   progress: PropTypes.string.isRequired,
-  currentChapter: PropTypes.string.isRequired,
+  currentChapter: PropTypes.number.isRequired,
 };
 
 export default Book;

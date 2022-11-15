@@ -11,21 +11,21 @@ const defaultState = [
     title: 'Harry Potter and the Philosopher\'s Stone',
     author: 'J.K. Rowling',
     progress: '64%',
-    currentChapter: 'Chapter 17',
+    currentChapter: ' 17',
   },
   {
     id: 2,
     title: 'Jurassic Park',
     author: 'Michael Crichton',
     progress: '8%',
-    currentChapter: 'Chapter 3',
+    currentChapter: ' 3',
   },
   {
     id: 3,
     title: 'The Lord of the Rings',
     author: 'J.R.R. Tolkien',
     progress: '99%',
-    currentChapter: 'Chapter 24',
+    currentChapter: ' 24',
   },
 ];
 

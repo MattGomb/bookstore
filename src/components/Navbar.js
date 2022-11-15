@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserAstronaut } from 'react-icons/fa';
 
 function Navbar() {
   return (
@@ -11,7 +12,7 @@ function Navbar() {
           <li className="nav-item"><Link to="Categories">CATEGORIES</Link></li>
         </ul>
       </div>
-      <span className="nav-icon">user icon</span>
+      <span className="nav-icon"><FaUserAstronaut /></span>
     </header>
   );
 }
