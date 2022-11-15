@@ -1,6 +1,9 @@
-import React from 'react';
+import { React, useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-function Form() {
+const Form = () => {
+  const [title, setTitle] = useState('');
+  const [author, setAuthor] = useState('');
   return (
     <section className="form-container">
       <h2 className="form-title">
@@ -13,6 +16,6 @@ function Form() {
       </form>
     </section>
   );
-}
+};
 
 export default Form;
