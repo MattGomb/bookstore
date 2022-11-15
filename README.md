@@ -16,7 +16,7 @@
 
 ## Live Demo 
 
-[Click Me!](https://bookstore-mattgomb.netlify.app)
+[Click Me!](bookstore-mattgomb.netlify.app)
 
 
 ## Getting Started with Create React App
