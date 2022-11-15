@@ -1,19 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import RemoveBook from './RemoveBook';
 
 const Book = ({
   id, title, author, progress, currentChapter,
 }) => (
   <div className="book">
     <div className="book-info">
+      <p>genre</p>
       <h1>{title}</h1>
       <p>{author}</p>
-      <p>genre</p>
-      <h3>title-placeholder</h3>
-      <p>author-placeholder</p>
       <div className="actions">
         <button type="button" className="book-button">Comments</button>
-        <button type="button" className="book-button" id={id}>Remove</button>
+        <RemoveBook id={id} />
         <button type="button" className="book-button">Edit</button>
       </div>
     </div>
@@ -23,7 +22,6 @@ const Book = ({
     <div className="book-current">
       <h3>CURRENT CHAPTER</h3>
       <p>
-        chapter
         {currentChapter}
       </p>
       <button type="button" className="progress-button">UPDATE PROGRESS</button>
