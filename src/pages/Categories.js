@@ -9,6 +9,7 @@ function Categories() {
     dispatch(checkStatus());
     const msg = document.querySelector('.msg');
     msg.style.display = msg.style.display === 'none' ? '' : 'none';
+    msg.style.backgroundColor = msg.style.display === 'none' ? '' : 'red';
   };
 
   return (
