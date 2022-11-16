@@ -21,7 +21,7 @@ const Form = () => {
 
   const onClickAddBook = (e) => {
     e.preventDefault();
-    if (title !== '' && author !== '') {
+    if (document.getElementById('title-input').value !== '' && document.getElementById('author-input').value !== '') {
       dispatch(addBook({
         id, title, author, progress, currentChapter,
       }));
