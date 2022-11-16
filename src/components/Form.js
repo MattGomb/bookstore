@@ -36,8 +36,8 @@ const Form = () => {
         ADD NEW BOOK
       </h2>
       <form className="form">
-        <input id="title-input" type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
-        <input id="author-input" type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
+        <input name="title-input" id="title-input" type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
+        <input name="author-input" id="author-input" type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
         <button type="submit" className="add-button" onClick={onClickAddBook}>ADD BOOK</button>
       </form>
     </section>
