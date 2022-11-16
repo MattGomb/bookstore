@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 } from 'uuid';
-import { addBook } from '../redux/books/books';
+import { bookFetch } from '../redux/books/books';
 
 const Form = () => {
   const [title, setTitle] = useState('');
@@ -22,7 +22,7 @@ const Form = () => {
   const onClickAddBook = (e) => {
     e.preventDefault();
     if (document.getElementById('title-input').value !== '' && document.getElementById('author-input').value !== '') {
-      dispatch(addBook({
+      dispatch(bookFetch({
         id, title, author, progress, currentChapter,
       }));
       document.getElementById('title-input').value = '';

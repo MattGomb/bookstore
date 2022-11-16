@@ -1,9 +1,16 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
+import { fetchBookAsync } from '../redux/books/books';
 
 function List() {
   const books = useSelector((state) => state.books);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBookAsync());
+  }, [dispatch]);
+
   return (
     <section className="list-container">
       <div className="list">
