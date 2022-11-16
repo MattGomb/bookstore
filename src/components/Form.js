@@ -19,12 +19,15 @@ const Form = () => {
     setTitle(e.target.value);
   };
 
-  const onClickAddBook = () => {
-    dispatch(addBook({
-      id, title, author, progress, currentChapter,
-    }));
-    document.getElementById('title-input').value = '';
-    document.getElementById('author-input').value = '';
+  const onClickAddBook = (e) => {
+    e.preventDefault();
+    if (title !== '' && author !== '') {
+      dispatch(addBook({
+        id, title, author, progress, currentChapter,
+      }));
+      document.getElementById('title-input').value = '';
+      document.getElementById('author-input').value = '';
+    }
   };
 
   return (
@@ -35,7 +38,7 @@ const Form = () => {
       <form className="form">
         <input id="title-input" type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
         <input id="author-input" type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
-        <button type="button" className="add-button" onClick={onClickAddBook}>ADD BOOK</button>
+        <button type="submit" className="add-button" onClick={onClickAddBook}>ADD BOOK</button>
       </form>
     </section>
   );
