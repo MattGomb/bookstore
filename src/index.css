@@ -22,7 +22,8 @@ body {
 }
 
 .nav-icon {
-  padding: 1rem;
+  font-size: 1.5rem;
+  align-self: center;
 }
 
 .links {
@@ -95,8 +96,20 @@ body {
 
 .categories-container {
   display: flex;
+  gap: 5rem;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 1rem 4rem;
+}
+
+.msg {
+  padding: 4rem;
+  background-color: red;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 0.5rem;
 }
 
 .list-container {
@@ -209,4 +222,10 @@ button:hover {
 .progress-button:hover {
   background-color: #0069d9;
   transform: translateY(-1px);
+}
+
+.add-button:active,
+.progress-button:active {
+  background-color: #0062cc;
+  transform: translateY(1px);
 }
