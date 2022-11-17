@@ -16,7 +16,7 @@ function List() {
       <div className="list">
         {books.map((book) => (
           <Book
-            key={book.id}
+            key={`${book.id}`}
             id={`${book.id}`}
             category={book.category}
             title={book.title}
