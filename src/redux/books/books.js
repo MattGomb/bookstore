@@ -81,16 +81,16 @@ export const bookFetch = ({
   dispatch(addBook(newBook));
 };
 
-export const removeBook = (payload) => ({
+export const removeBook = (id) => ({
   type: REMOVE,
-  id: payload.id,
+  id,
 });
 
-export const bookRemove = (id) => async (dispatch) => {
+export const bookRemove = ({ id }) => async (dispatch) => {
   await fetch(`${URL}/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
-  }).then(() => dispatch(removeBook({ id })));
+  }).then(() => dispatch(removeBook(id)));
 };
