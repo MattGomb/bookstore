@@ -201,6 +201,10 @@ input {
   margin-bottom: 0.5rem;
 }
 
+.CircularProgressbar {
+  height: 8rem;
+}
+
 .book-progress,
 .book-current {
   width: 30%;
