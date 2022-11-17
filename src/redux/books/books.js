@@ -21,6 +21,7 @@ export default function booksReducer(state = defaultState, action) {
           id: action.id,
           title: action.title,
           author: action.author,
+          category: action.category,
           progress: action.progress,
           currentChapter: action.currentChapter,
         },
@@ -40,14 +41,15 @@ export const fetchBook = (list) => ({ type: FETCH, list });
 
 export const fetchBookAsync = () => async (dispatch) => {
   await fetch(URL)
-    .then((response) => response.json())
+    .then((response) => response)
     .then((books) => {
       const list = [];
       Object.keys(books).forEach((key) => {
         list.push({
-          id: key,
+          item_id: key,
           title: books[key][0].title,
           author: books[key][0].author,
+          category: books[key][0].category,
           progress: books[key][0].progress,
           currentChapter: books[key][0].currentChapter,
         });
@@ -61,17 +63,19 @@ export const addBook = (payload) => ({
   id: payload.id,
   title: payload.title,
   author: payload.author,
+  category: payload.category,
   progress: payload.progress,
   currentChapter: payload.currentChapter,
 });
 
 export const bookFetch = ({
-  id, title, author, progress, currentChapter,
+  id, title, author, category, progress, currentChapter,
 }) => async (dispatch) => {
   const newBook = {
     id,
     title,
     author,
+    category,
     progress,
     currentChapter,
   };

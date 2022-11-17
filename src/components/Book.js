@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import RemoveBook from './RemoveBook';
 
 const Book = ({
-  id, title, author, progress, currentChapter,
+  id, category, title, author, progress, currentChapter,
 }) => (
   <div className="book">
     <div className="book-info">
-      <p>{id}</p>
+      <p>{category}</p>
       <h1>{title}</h1>
       <p>{author}</p>
       <div className="actions">
@@ -35,6 +35,7 @@ const Book = ({
 
 Book.propTypes = {
   id: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   progress: PropTypes.string.isRequired,

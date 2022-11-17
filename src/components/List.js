@@ -18,6 +18,7 @@ function List() {
           <Book
             key={book.id}
             id={`${book.id}`}
+            category={book.category}
             title={book.title}
             author={book.author}
             progress={book.progress}
