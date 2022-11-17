@@ -177,6 +177,10 @@ input:nth-child(2) {
   padding: 1rem;
 }
 
+.book-info p, .book-info h1{
+  margin-bottom: 0.5rem;
+}
+
 .book-progress,
 .book-current {
   width: 30%;
