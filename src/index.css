@@ -171,6 +171,10 @@ input {
   color: white;
 }
 
+#category-input:hover {
+  cursor: pointer;
+}
+
 #category-input option {
   background: #fff;
   color: #000;
@@ -192,7 +196,8 @@ input {
   padding: 1rem;
 }
 
-.book-info p, .book-info h1{
+.book-info p,
+.book-info h1 {
   margin-bottom: 0.5rem;
 }
 
