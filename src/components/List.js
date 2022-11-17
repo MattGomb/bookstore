@@ -21,8 +21,6 @@ function List() {
             category={book.category}
             title={book.title}
             author={book.author}
-            progress={book.progress}
-            currentChapter={book.currentChapter}
           />
         ))}
       </div>

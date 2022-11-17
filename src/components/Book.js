@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import RemoveBook from './RemoveBook';
 
 const Book = ({
-  id, category, title, author, progress, currentChapter,
+  id, category, title, author,
 }) => (
   <div className="book">
     <div className="book-info">
@@ -17,17 +17,11 @@ const Book = ({
       </div>
     </div>
     <div className="book-progress">
-      <h3>
-        {progress}
-        %
-      </h3>
+      <h3>47%</h3>
     </div>
     <div className="book-current">
       <h3>CURRENT CHAPTER</h3>
-      <p>
-        Chapter
-        {currentChapter}
-      </p>
+      <p>Chapter 7</p>
       <button type="button" className="progress-button">UPDATE PROGRESS</button>
     </div>
   </div>
@@ -38,8 +32,6 @@ Book.propTypes = {
   category: PropTypes.string.isRequired,
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
-  progress: PropTypes.string.isRequired,
-  currentChapter: PropTypes.number.isRequired,
 };
 
 export default Book;

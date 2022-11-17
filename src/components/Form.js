@@ -7,9 +7,7 @@ const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
   const [category, setCategory] = useState('');
-  const id = v4().slice(0, 10);
-  const progress = Math.floor(Math.random() * 100);
-  const currentChapter = Math.floor(Math.random() * 10);
+  const id = v4().slice(0, 8);
   const dispatch = useDispatch();
 
   const onChangeAuthorHandler = (e) => {
@@ -28,7 +26,7 @@ const Form = () => {
     e.preventDefault();
     if (document.getElementById('title-input').value !== '' && document.getElementById('author-input').value !== '' && document.getElementById('category-input').value !== 'Choose') {
       dispatch(bookFetch({
-        id, title, author, category, progress, currentChapter,
+        id, title, author, category,
       }));
       document.getElementById('title-input').value = '';
       document.getElementById('author-input').value = '';
