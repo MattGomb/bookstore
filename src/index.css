@@ -231,6 +231,11 @@ button:hover {
   background-color: #0290ff;
 }
 
+.book-button:nth-child(2) {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+}
+
 .book-button:hover {
   color: #0290ff;
   font-weight: bold;
