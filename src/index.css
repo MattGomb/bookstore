@@ -154,12 +154,26 @@ input {
   padding: 1rem;
 }
 
-input:nth-child(1) {
-  width: 50%;
+#title-input {
+  width: 40%;
 }
 
-input:nth-child(2) {
+#author-input {
   width: 30%;
+}
+
+#category-input {
+  width: 10%;
+  padding: 0.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  background: #0290ff;
+  color: white;
+}
+
+#category-input option {
+  background: #fff;
+  color: #000;
 }
 
 .book {
