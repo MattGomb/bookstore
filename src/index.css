@@ -322,12 +322,12 @@ button:hover {
     border-bottom: 1px solid #e8e8e8;
     box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.2);
   }
-  
+
   .nav-icon {
     font-size: 1.5rem;
     align-self: center;
   }
-  
+
   .links {
     display: flex;
     justify-content: space-between;
@@ -350,7 +350,7 @@ button:hover {
   #title-input {
     width: 80%;
   }
-  
+
   #author-input {
     width: 70%;
   }
@@ -360,7 +360,7 @@ button:hover {
   .links {
     flex-direction: row;
   }
-  
+
   .list {
     display: flex;
     justify-content: center;
@@ -377,7 +377,6 @@ button:hover {
 
   .book-progress {
     font-family: 'Montserrat', sans-serif;
-    display: grid;
     width: 15%;
     padding: 1rem;
     display: flex;
@@ -414,11 +413,11 @@ button:hover {
   #title-input {
     width: 40%;
   }
-  
+
   #author-input {
     width: 30%;
   }
-  
+
   #category-input {
     width: 10%;
     padding: 0.5rem;
