@@ -18,9 +18,9 @@ export const getBooks = createAsyncThunk('books/getBooks', async () => {
   return response.data;
 });
 
-export const removeBook = createAsyncThunk('books/removeBook', async (book) => {
-  await axios.delete(`${URL}/${book.item_id}`);
-  return book;
+export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
+  axios.delete(`${URL}/${id}`)
+    .then((response) => (response.data));
 });
 
 const booksSlice = createSlice({
@@ -39,10 +39,7 @@ const booksSlice = createSlice({
       ))
       .addCase(removeBook.fulfilled, (state, action) => {
         state.forEach((book) => {
-          console.log(book.item_id);
-          console.log(action.payload.id);
-          console.log(state.indexOf(book));
-          if (book.item_id === action.payload.id) {
+          if (book.item_id === action.payload) {
             state.splice(state.indexOf(book), 1);
           }
         });
