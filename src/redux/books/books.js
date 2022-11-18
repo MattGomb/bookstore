@@ -1,17 +1,58 @@
-// specific external API
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Ob3CSqKLG46FjtXBtUgx/books';
 
-// actions
+const initialState = [];
 
-const ADD = 'bookstore/src/redux/books/books/ADD';
-const REMOVE = 'bookstore/src/redux/books/books/REMOVE';
-const FETCH = 'FETCH';
+export const addBook = createAsyncThunk('books/addBook', async (book) => {
+  const response = await axios.post(URL, book);
+  if (response.status === 201) {
+    return book;
+  }
+  return response.data;
+});
 
-// reducer
+export const getBooks = createAsyncThunk('books/getBooks', async () => {
+  const response = await axios.get(URL);
+  return response.data;
+});
 
-const defaultState = [];
+export const removeBook = createAsyncThunk('books/removeBook', async (book) => {
+  await axios.delete(`${URL}/${book.item_id}`);
+  return book;
+});
 
+const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    // Add reducers to handle loading state as needed
+    builder
+      .addCase(addBook.fulfilled, (state, action) => {
+        // Add book
+        state.push(action.payload);
+      })
+      .addCase(getBooks.fulfilled, (state, action) => Object.entries(action.payload).map(
+        ([id, [book]]) => ({ ...book, item_id: id }),
+      ))
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state.forEach((book) => {
+          console.log(book.item_id);
+          console.log(action.payload.id);
+          console.log(state.indexOf(book));
+          if (book.item_id === action.payload.id) {
+            state.splice(state.indexOf(book), 1);
+          }
+        });
+      });
+  },
+});
+
+export default booksSlice.reducer;
+
+/*
 export default function booksReducer(state = defaultState, action) {
   switch (action.type) {
     case ADD:
@@ -32,11 +73,8 @@ export default function booksReducer(state = defaultState, action) {
       return state;
   }
 }
-
 // action creators for fetch, add and remove books
-
 export const fetchBook = (list) => ({ type: FETCH, list });
-
 export const fetchBookAsync = () => async (dispatch) => {
   await fetch(URL)
     .then((response) => response.json())
@@ -53,7 +91,6 @@ export const fetchBookAsync = () => async (dispatch) => {
       dispatch(fetchBook(list));
     });
 };
-
 export const addBook = (payload) => ({
   type: ADD,
   id: payload.id,
@@ -61,7 +98,6 @@ export const addBook = (payload) => ({
   author: payload.author,
   category: payload.category,
 });
-
 export const bookFetch = ({
   id, title, author, category,
 }) => async (dispatch) => {
@@ -87,10 +123,11 @@ export const removeBook = (id) => ({
 });
 
 export const bookRemove = ({ id }) => async (dispatch) => {
-  await fetch(`${URL}/${id}`, {
+    await fetch(`${URL}/${id}`, {
     method: 'DELETE',
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   }).then(() => dispatch(removeBook(id)));
 };
+*/
