@@ -34,6 +34,7 @@ body {
   justify-content: space-between;
   gap: 1rem;
   align-items: center;
+  text-align: center;
 }
 
 .navbar {
@@ -86,14 +87,14 @@ body {
 
 .home-title {
   font-family: 'Roboto Slab', serif;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #fff;
   text-align: center;
 }
 
 .home-p {
   font-family: 'Roboto Slab', serif;
-  font-size: 1.5rem;
+  font-size: 1rem;
   text-align: center;
 }
 
@@ -313,6 +314,14 @@ button:hover {
 }
 
 @media screen and (min-width: 768px) {
+  .home-title {
+    font-size: 3rem;
+  }
+
+  .home-p {
+    font-size: 1.5rem;
+  }
+
   .nav-container {
     display: flex;
     flex-direction: row;
