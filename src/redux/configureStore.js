@@ -1,6 +1,6 @@
 import { configureStore, combineReducers, applyMiddleware } from '@reduxjs/toolkit';
 import thunk from 'redux-thunk';
-import booksReducer, { fetchBookAsync } from './books/books';
+import booksReducer, { getBooks } from './books/books';
 import categoriesReducer from './categories/categories';
 
 // root reducer
@@ -12,6 +12,6 @@ const rootReducer = combineReducers({
 // store
 const store = configureStore({ reducer: rootReducer }, applyMiddleware(thunk));
 
-store.dispatch(fetchBookAsync);
+store.dispatch(getBooks);
 
 export default store;
