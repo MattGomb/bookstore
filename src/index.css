@@ -408,6 +408,7 @@ button:hover {
   .form-container {
     padding: 1rem;
     margin: 1rem 5rem;
+    text-align: start;
   }
 
   .form {
