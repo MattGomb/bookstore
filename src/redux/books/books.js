@@ -1,66 +1,50 @@
-// actions
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
-const ADD = 'bookstore/src/redux/books/books/ADD';
-const REMOVE = 'bookstore/src/redux/books/books/REMOVE';
+const URL = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/Ob3CSqKLG46FjtXBtUgx/books';
 
-// reducer
+const initialState = [];
 
-const defaultState = [
-  {
-    id: 1,
-    title: 'Harry Potter and the Philosopher\'s Stone',
-    author: 'J.K. Rowling',
-    progress: '64%',
-    currentChapter: ' 17',
-  },
-  {
-    id: 2,
-    title: 'Jurassic Park',
-    author: 'Michael Crichton',
-    progress: '8%',
-    currentChapter: ' 3',
-  },
-  {
-    id: 3,
-    title: 'The Lord of the Rings',
-    author: 'J.R.R. Tolkien',
-    progress: '99%',
-    currentChapter: ' 24',
-  },
-];
-
-export default function booksReducer(state = defaultState, action) {
-  switch (action.type) {
-    case ADD:
-      return [
-        ...state,
-        {
-          id: action.id,
-          title: action.title,
-          author: action.author,
-          progress: action.progress,
-          currentChapter: action.currentChapter,
-        },
-      ];
-    case REMOVE:
-      return state.filter((book) => book.id !== action.id);
-    default:
-      return state;
+export const addBook = createAsyncThunk('books/addBook', async (book) => {
+  const response = await axios.post(URL, book);
+  if (response.status === 201) {
+    return book;
   }
-}
-
-// action creators for add and remove books
-
-export const addBook = (payload) => ({
-  type: ADD,
-  id: payload.id,
-  title: payload.title,
-  author: payload.author,
-  progress: payload.progress,
-  currentChapter: payload.currentChapter,
+  return response.data;
 });
 
-export const removeBook = (payload) => ({
-  type: REMOVE,
-  id: payload.id,
+export const getBooks = createAsyncThunk('books/getBooks', async () => {
+  const response = await axios.get(URL);
+  return response.data;
 });
+
+export const removeBook = createAsyncThunk('books/removeBook', async (id) => {
+  axios.delete(`${URL}/${id}`)
+    .then((response) => (response.data));
+});
+
+const booksSlice = createSlice({
+  name: 'books',
+  initialState,
+  reducers: {},
+  extraReducers: (builder) => {
+    // Add reducers to handle loading state as needed
+    builder
+      .addCase(addBook.fulfilled, (state, action) => {
+        // Add book
+        state.push(action.payload);
+      })
+      .addCase(getBooks.fulfilled, (state, action) => Object.entries(action.payload).map(
+        ([id, [book]]) => ({ ...book, item_id: id }),
+      ))
+      .addCase(removeBook.fulfilled, (state, action) => {
+        state.forEach((book) => {
+          if (book.item_id === action.payload) {
+            state.splice(state.indexOf(book), 1);
+          }
+        });
+      });
+  },
+});
+
+export default booksSlice.reducer;

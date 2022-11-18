@@ -6,9 +6,8 @@ import { addBook } from '../redux/books/books';
 const Form = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
-  const id = v4().slice(0, 10);
-  const progress = Math.floor(Math.random() * 100);
-  const currentChapter = Math.floor(Math.random() * 10);
+  const [category, setCategory] = useState('');
+  const id = v4().slice(0, 8);
   const dispatch = useDispatch();
 
   const onChangeAuthorHandler = (e) => {
@@ -19,14 +18,19 @@ const Form = () => {
     setTitle(e.target.value);
   };
 
+  const onChangeCategoryHandler = (e) => {
+    setCategory(e.target.value);
+  };
+
   const onClickAddBook = (e) => {
     e.preventDefault();
-    if (document.getElementById('title-input').value !== '' && document.getElementById('author-input').value !== '') {
+    if (document.getElementById('title-input').value !== '' && document.getElementById('author-input').value !== '' && document.getElementById('category-input').value !== 'Choose') {
       dispatch(addBook({
-        id, title, author, progress, currentChapter,
+        item_id: id, title, author, category,
       }));
       document.getElementById('title-input').value = '';
       document.getElementById('author-input').value = '';
+      document.getElementById('category-input').value = 'Choose';
     }
   };
 
@@ -36,8 +40,24 @@ const Form = () => {
         ADD NEW BOOK
       </h2>
       <form className="form">
-        <input id="title-input" type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
-        <input id="author-input" type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
+        <input name="title-input" id="title-input" type="text" placeholder="Book title" onChange={onChangeTitleHandler} />
+        <input name="author-input" id="author-input" type="text" placeholder="Author" onChange={onChangeAuthorHandler} />
+        <select name="category-input" id="category-input" onChange={onChangeCategoryHandler}>
+          <option value="Choose">choose</option>
+          <option value="Action">Action</option>
+          <option value="Biography">Biography</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="History">History</option>
+          <option value="Horror">Horror</option>
+          <option value="Kids">Kids</option>
+          <option value="Learning">Learning</option>
+          <option value="Science">Science</option>
+          <option value="Sci-Fi">Sci-Fi</option>
+          <option value="Self-Help">Self-Help</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Western">Western</option>
+          <option value="Other">Other</option>
+        </select>
         <button type="submit" className="add-button" onClick={onClickAddBook}>ADD BOOK</button>
       </form>
     </section>

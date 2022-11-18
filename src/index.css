@@ -142,6 +142,7 @@ body {
   align-items: center;
   flex-direction: row;
   margin: 1rem 0;
+  gap: 1rem;
 }
 
 .form-title {
@@ -153,12 +154,30 @@ input {
   padding: 1rem;
 }
 
-input:nth-child(1) {
-  width: 50%;
+#title-input {
+  width: 40%;
 }
 
-input:nth-child(2) {
+#author-input {
   width: 30%;
+}
+
+#category-input {
+  width: 10%;
+  padding: 0.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 6px;
+  background: #0290ff;
+  color: white;
+}
+
+#category-input:hover {
+  cursor: pointer;
+}
+
+#category-input option {
+  background: #fff;
+  color: #000;
 }
 
 .book {
@@ -175,6 +194,15 @@ input:nth-child(2) {
 .book-info {
   width: 40%;
   padding: 1rem;
+}
+
+.book-info p,
+.book-info h1 {
+  margin-bottom: 0.5rem;
+}
+
+.CircularProgressbar {
+  height: 8rem;
 }
 
 .book-progress,
@@ -210,6 +238,11 @@ button:hover {
   border-radius: 4px;
   color: white;
   background-color: #0290ff;
+}
+
+.book-button:nth-child(2) {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
 }
 
 .book-button:hover {
