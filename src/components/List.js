@@ -1,14 +1,14 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Book from './Book';
-import { fetchBookAsync } from '../redux/books/books';
+import { getBooks } from '../redux/books/books';
 
 function List() {
   const books = useSelector((state) => state.books);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchBookAsync());
+    dispatch(getBooks());
   }, [dispatch]);
 
   return (
@@ -16,8 +16,8 @@ function List() {
       <div className="list">
         {books.map((book) => (
           <Book
-            key={`${book.id}`}
-            id={`${book.id}`}
+            key={`${book.item_id}`}
+            id={`${book.item_id}`}
             category={book.category}
             title={book.title}
             author={book.author}
