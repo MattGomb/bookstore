@@ -12,9 +12,9 @@ const Book = ({
   return (
     <div className="book">
       <div className="book-info">
-        <p>{category}</p>
-        <h1>{title}</h1>
-        <p>{author}</p>
+        <p id="category">{category}</p>
+        <h1 id="title">{title}</h1>
+        <p id="author">{author}</p>
         <div className="actions">
           <button type="button" className="book-button">Comments</button>
           <RemoveBook id={id} />
@@ -22,7 +22,14 @@ const Book = ({
         </div>
       </div>
       <div className="book-progress">
-        <CircularProgressbar id="progress-bar" value={percentage} text={`${percentage}%`} />
+        <CircularProgressbar id="progress-bar" value={percentage} />
+      </div>
+      <div className="progress-textholder">
+        <h3 className="progress">
+          {percentage}
+          %
+        </h3>
+        <p className="progress-text">Completed</p>
       </div>
       <div className="book-current">
         <h3>CURRENT CHAPTER</h3>
